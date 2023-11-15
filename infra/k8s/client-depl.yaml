@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-client-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-client
+  template:
+    metadata:
+      labels:
+        app: k8s-client
+    spec:
+      containers:
+        - name: k8s-client
+          image: rdjoan/k8s-client
+          imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-client-srv
+spec:
+  selector:
+    app: k8s-client
+  ports:
+    - name: k8s-client
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

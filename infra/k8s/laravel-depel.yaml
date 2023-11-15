@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-depl
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: laravel
+  template:
+    metadata:
+      labels:
+        app: laravel
+    spec:
+      containers:
+        - name: laravel
+          image: rdjoan/laravel
+          envFrom:
+          - configMapRef:
+              name: laravel-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-srv
+spec:
+  selector:
+    app: laravel
+  ports:
+    - name: laravel
+      protocol: TCP
+      port: 9000
+      targetPort: 9000

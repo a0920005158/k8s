@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-chat-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-chat
+  template:
+    metadata:
+      labels:
+        app: nodejs-chat
+    spec:
+      containers:
+        - name: nodejs-chat
+          image: rdjoan/nodejs-chat
+          imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-chat-service
+spec:
+  selector:
+    app: nodejs-chat
+  ports:
+    - name: nodejs-chat
+      protocol: TCP
+      port: 2345
+      targetPort: 2345
