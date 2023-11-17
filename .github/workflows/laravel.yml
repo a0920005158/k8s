@@ -7,7 +7,7 @@ on:
     paths:
       - 'laravel-test/**'
 
-  jobs:
+jobs:
     build:
       runs-on: ubuntu-latest
       steps:
