@@ -1,2 +1,3 @@
 client/node_modules
 nodejs-test/node_modules
+/laravel-test/node_modules
