@@ -1,0 +1,20 @@
+name: deploy-laravel2
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'laravel-test/**'
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - run: cd laravel-test && docker build -t rdjoan001/laravel .
+        - run: docker login -u $DOCKER_PASSWORD -P $DOCKER_PASSWORD
+          env:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        - run: docker push rdjoan001/laravel
