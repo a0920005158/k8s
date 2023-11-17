@@ -1,4 +1,4 @@
-name: deploy-laravel2
+name: deploy-laravel
 
 on:
   push:
