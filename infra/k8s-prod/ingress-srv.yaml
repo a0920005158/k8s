@@ -11,28 +11,28 @@ spec:
     - host: www.traveloutline.com
       http:
         paths:
-          - path: /laravel
+          - path: /laravel/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: laravel-srv
                 port:
                   number: 9000
-          - path: /client
+          - path: /client/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: k8s-client-srv
                 port:
                   number: 3000
-          - path: /nodejs-chat
+          - path: /nodejs-chat/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: nodejs-chat-service
                 port:
                   number: 2345
-          - path: /pma
+          - path: /pma/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
