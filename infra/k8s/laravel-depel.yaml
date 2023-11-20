@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: laravel
-          image: rdjoan/laravel
+          image: rdjoan001/laravel
           envFrom:
           - configMapRef:
               name: laravel-config
