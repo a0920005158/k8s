@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: www.traveloutline.com
+    - host: www.traveloutline.com/laravel
       http:
         paths:
           - path: /?(.*)
@@ -18,27 +18,7 @@ spec:
                 name: laravel-srv
                 port:
                   number: 9000
-    - host: www.traveloutline.com
-      http:
-        paths:
-          - path: /?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: mysql-srv
-                port:
-                  number: 8080
-    - host: www.traveloutline.com
-      http:
-        paths:
-          - path: /?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: nodejs-test-srv
-                port:
-                  number: 4000
-    - host: www.traveloutline.com
+    - host: www.traveloutline.com/client
       http:
         paths:
           - path: /?(.*)
@@ -48,7 +28,7 @@ spec:
                 name: k8s-client-srv
                 port:
                   number: 3000
-    - host: www.traveloutline.com
+    - host: www.traveloutline.com/nodejs-chat
       http:
         paths:
           - path: /?(.*)
@@ -58,7 +38,7 @@ spec:
                 name: nodejs-chat-service
                 port:
                   number: 2345
-    - host: www.traveloutline.com
+    - host: www.traveloutline.com/pma
       http:
         paths:
           - path: /?(.*)
@@ -67,14 +47,4 @@ spec:
               service:
                 name: pma-service
                 port:
-                  number: 80
-    - host: www.traveloutline.com
-      http:
-        paths:
-          - path: /?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: redis-master-service
-                port:
-                  number: 6379                               
+                  number: 80                           

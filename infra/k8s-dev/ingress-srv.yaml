@@ -18,26 +18,6 @@ spec:
                 name: laravel-srv
                 port:
                   number: 9000
-    - host: mysql-test.org
-      http:
-        paths:
-          - path: /?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: mysql-srv
-                port:
-                  number: 8080
-    - host: nodejs-test.org
-      http:
-        paths:
-          - path: /?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: nodejs-test-srv
-                port:
-                  number: 4000
     - host: k8s-client.org
       http:
         paths:
