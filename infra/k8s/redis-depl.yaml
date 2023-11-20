@@ -18,7 +18,7 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: redis
+    app: app:redis
   name: redis
 spec:
   replicas: 1
