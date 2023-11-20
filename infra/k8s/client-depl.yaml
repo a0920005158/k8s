@@ -15,7 +15,6 @@ spec:
       containers:
         - name: k8s-client
           image: rdjoan001/k8s-client
-          imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service

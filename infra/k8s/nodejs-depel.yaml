@@ -15,7 +15,6 @@ spec:
       containers:
         - name: nodejs-chat
           image: rdjoan001/nodejs-chat
-          imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service
