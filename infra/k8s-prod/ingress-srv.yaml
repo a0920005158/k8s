@@ -8,40 +8,40 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: www.traveloutline.com/laravel
+    - host: www.traveloutline.com
       http:
         paths:
-          - path: /?(.*)
+          - path: /laravel/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: laravel-srv
                 port:
                   number: 9000
-    - host: www.traveloutline.com/client
+    - host: www.traveloutline.com
       http:
         paths:
-          - path: /?(.*)
+          - path: /client/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: k8s-client-srv
                 port:
                   number: 3000
-    - host: www.traveloutline.com/nodejs-chat
+    - host: www.traveloutline.com
       http:
         paths:
-          - path: /?(.*)
+          - path: /nodejs-chat/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
                 name: nodejs-chat-service
                 port:
                   number: 2345
-    - host: www.traveloutline.com/pma
+    - host: www.traveloutline.com
       http:
         paths:
-          - path: /?(.*)
+          - path: /pma/?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
