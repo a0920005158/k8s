@@ -11,6 +11,7 @@ class JoanTestController extends Controller
 {
     public function test(Request $request)
     {
+        $test = 'test123';
         $result = array();
         $data = Member::select("acc", "password")->where('mid', '1')->get()->first();
         $result['db'] = $data;
