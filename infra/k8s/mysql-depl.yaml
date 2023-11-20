@@ -9,7 +9,7 @@ spec:
     name: mysql
     protocol: TCP
   selector:
-    app: mysql
+    app: mysql-depl
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - image: mysql
-        name: mysql
+        name: mysql-depl
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
