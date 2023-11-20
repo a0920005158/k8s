@@ -27,7 +27,7 @@ spec:
         # - name: PMA_ABSOLUTE_URI
         #   value: "http://pma-servicex/phpmyadmin/"
         - name: PMA_HOST
-          value: mysql
+          value: mysql-master-service
         - name: PMA_PORT
           value: "3306"
         - name: MYSQL_ROOT_PASSWORD
