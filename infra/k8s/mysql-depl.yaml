@@ -16,20 +16,20 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: app:mysql
+    app: mysql-depl
   name: mysql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app:mysql
+      app: mysql-depl
   strategy:
     type: Recreate  # ensure only one instance running
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: app:mysql
+        app: mysql-depl
     spec:
       containers:
       - image: mysql
