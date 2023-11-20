@@ -29,7 +29,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: redis
+        app: redis-depl
     spec:
       containers:
       - image: redis
