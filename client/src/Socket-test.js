@@ -6,7 +6,7 @@ const SockTest = () => {
 
     const connectWebSocket = () => {
         //開啟
-        const ws = webSocket('http://nodejs-chat-service:2345')
+        const ws = webSocket('http://nodejs.traveloutline.com')
         console.log("connet!!");
         ws.emit('test-emit', '只回傳給發送訊息的 client')
         ws.on('socket-on', message => {
