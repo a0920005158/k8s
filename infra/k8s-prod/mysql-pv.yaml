@@ -13,7 +13,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: manual
   hostPath:
-    path : "/mnt/aprd_db/"
+    path : "/run/desktop/mnt/host/d/docker_volumes/aprd_db/"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
