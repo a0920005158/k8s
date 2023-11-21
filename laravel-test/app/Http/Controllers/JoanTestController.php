@@ -11,13 +11,11 @@ class JoanTestController extends Controller
 {
     public function test(Request $request)
     {
-        $result = array('test'=>"test123");
-        // $data = Member::select("acc", "password")->where('mid', '1')->get()->first();
-        // $result['db'] = $data;
-        // Redis::set('user:profile:' . $data->mid, $data->acc);
-        // $result['redis'] = Redis::get('user:profile:' . $data->mid);
-        Redis::set('user:profile:1', "joan123");
-        $result['redis'] = Redis::get('user:profile:1');
+        $result = array();
+        $data = Member::select("acc", "password")->where('mid', '1')->get()->first();
+        $result['db'] = $data;
+        Redis::set('user:profile:' . $data->mid, $data->acc);
+        $result['redis'] = Redis::get('user:profile:' . $data->mid);
         return response()->json($result);
     }
 }
