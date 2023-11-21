@@ -14,26 +14,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    app: mysql-depl
-  name: mysql
+  name: mysql-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysql-depl
+      app: mysql
   strategy:
     type: Recreate  # ensure only one instance running
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: mysql-depl
+        app: mysql
     spec:
       containers:
       - image: mysql
-        name: mysql-depl
+        name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
