@@ -16,6 +16,8 @@ class JoanTestController extends Controller
         // $result['db'] = $data;
         // Redis::set('user:profile:' . $data->mid, $data->acc);
         // $result['redis'] = Redis::get('user:profile:' . $data->mid);
+        Redis::set('user:profile:1', "joan123");
+        $result['redis'] = Redis::get('user:profile:1');
         return response()->json($result);
     }
 }
