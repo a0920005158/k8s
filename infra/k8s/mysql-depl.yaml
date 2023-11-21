@@ -9,7 +9,7 @@ spec:
     name: mysql
     protocol: TCP
   selector:
-    app: mysql-depl
+    app: mysql
 ---
 apiVersion: apps/v1
 kind: Deployment
