@@ -6,7 +6,7 @@ do
     # 檢查是否有修改 'client/' 目錄下的檔案
     if git diff --name-only $local_sha $remote_sha | grep -q '^client/'; then
       # 在這裡執行你的部署操作，例如 Docker build、推送、Kubernetes 操作等
-      docker build -t client/k8s-client ./client
+      docker build -t k8s-client ./client
 	  docker tag k8s-client registry.digitalocean.com/rdjoan002/k8s-client
 	  docker push registry.digitalocean.com/rdjoan002/k8s-client
       doctl kubernetes cluster kubeconfig save k8s-test
